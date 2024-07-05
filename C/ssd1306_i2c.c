@@ -437,8 +437,8 @@ char* GetIpAddress(void)
       fd = socket(AF_INET, SOCK_DGRAM, 0);
       /* I want to get an IPv4 IP address */
       ifr.ifr_addr.sa_family = AF_INET;
-      /* I want IP address attached to "eth0" */
-      strncpy(ifr.ifr_name, "eth0", IFNAMSIZ-1);
+      /* I want IP address attached to "wlan0" */
+      strncpy(ifr.ifr_name, "wlan0", IFNAMSIZ-1);
       symbol=ioctl(fd, SIOCGIFADDR, &ifr);
       close(fd);
       if(symbol==0)
